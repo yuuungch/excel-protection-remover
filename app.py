@@ -18,11 +18,6 @@ NSMAP = {'main': EXCEL_NS}
 
 REQUIRED_XLSX_FILES = {'[Content_Types].xml', 'xl/workbook.xml'}
 
-# Vercel: templates directory is at ../../templates relative to this file
-TEMPLATE_DIR = os.path.join(os.path.dirname(__file__), '../../templates')
-
-app.template_folder = TEMPLATE_DIR
-
 def allowed_file(filename):
     return '.' in filename and filename.rsplit('.', 1)[1].lower() in app.config['ALLOWED_EXTENSIONS']
 
@@ -152,8 +147,4 @@ def download_file():
             except:
                 pass
         return response
-    abort(403)
-
-# Vercel entry point
-# Export 'app' as the handler
-handler = app 
+    abort(403) 

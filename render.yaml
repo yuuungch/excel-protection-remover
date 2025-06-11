@@ -3,7 +3,7 @@ services:
     name: excel-protection-remover
     env: python
     buildCommand: pip install -r requirements.txt
-    startCommand: gunicorn api.index:handler
+    startCommand: gunicorn app:app
     envVars:
       - key: PYTHON_VERSION
         value: 3.9.0 
