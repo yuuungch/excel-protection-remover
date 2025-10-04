@@ -1,7 +1,7 @@
 import { NextRequest } from 'next/server';
 import { unlockExcelBuffer, isLikelyExcelZip } from '@/lib/unlockExcel';
 
-export const runtime = 'edge';
+export const runtime = 'nodejs';
 
 export async function POST(req: NextRequest) {
     try {
@@ -42,7 +42,7 @@ export async function POST(req: NextRequest) {
             status: 200,
             headers: { 'content-type': 'application/json' },
         });
-    } catch (e) {
+    } catch {
         return new Response(JSON.stringify({ error: 'Unexpected error' }), { status: 500 });
     }
 }
