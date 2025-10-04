@@ -31,7 +31,7 @@ export async function POST(req: NextRequest) {
                 }
                 const outputBuffer = await unlockExcelBuffer(inputBuffer);
                 const base64 = Buffer.from(outputBuffer).toString('base64');
-                const dataUrl = `application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;base64,${base64}`;
+                const dataUrl = `data:application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;base64,${base64}`;
                 results.push({ filename, ok: true, dataUrl });
             } catch (e) {
                 results.push({ filename, ok: false, error: 'Error processing file' });
