@@ -18,4 +18,5 @@ ENV/
 
 # OS files
 .DS_Store
-Thumbs.db Archive/
+Thumbs.db 
+Archive/
